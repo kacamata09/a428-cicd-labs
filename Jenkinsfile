@@ -23,9 +23,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm cache clean -f'
-                sh 'rm -r node_modules'
+                // sh 'rm -r node_modules'
                 sh 'npm install'
-
             }
         }
         stage('Test') { 
