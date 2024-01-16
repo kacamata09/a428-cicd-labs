@@ -2,6 +2,8 @@
 //     docker.image('node:16-buster-slim').withRun('-p 3000:3000') {
 
 //         stage('Build') {
+//             sh 'npm cache clean -f'
+//             // sh 'rm -r node_modules'
 //             sh 'npm install'
 //         }
 
@@ -23,7 +25,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm cache clean -f'
-                // sh 'rm -r node_modules'
+                sh 'rm -r node_modules'
                 sh 'npm install'
             }
         }
