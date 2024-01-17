@@ -25,7 +25,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm cache clean -f'
-                sh 'npm install -g npm@6'
+                // sh 'npm install -g npm@6'
                 // sh 'rm -r node_modules'
                 sh 'npm install'
             }
