@@ -17,7 +17,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:16-buster-slim'
+            image 'node:lts-buster-slim'
             args '-p 3000:3000'
         }
     }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 sh 'npm cache clean -f'
                 // sh 'npm install -g npm'
-                sh 'rm -r node_modules'
+                // sh 'rm -r node_modules'
                 sh 'npm install'
             }
         }
