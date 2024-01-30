@@ -27,11 +27,13 @@ pipeline {
                 sh 'npm cache clean -f'
                 // sh 'npm install -g npm'
                 // sh 'rm -r node_modules'
+                script {
                 def nodeModules = './node_modules'
                 if (fileExists(nodeModules)) {
                     sh "rm -rf ${nodeModules}"
                 }
-                
+                }
+
                 sh 'npm install'
             }
         }
